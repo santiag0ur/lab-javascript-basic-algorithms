@@ -8,65 +8,65 @@ console.log (`The navigator´s name is ${hacker2}.`);
 // Iteration 2: Conditionals
 
 if ( hacker1.length > hacker2.length) 
-{
-console.log (`The driver has the longest name, it has ${hacker1.length} characters. `);
-}
+  {
+  console.log (`The driver has the longest name, it has ${hacker1.length} characters. `);
+  }
 else if (hacker2.length > hacker1.length)
-{
-console.log (`It seems that the navigator has the longest name, it has ${hacker2.length} characters.`);
-}
+  {
+  console.log (`It seems that the navigator has the longest name, it has ${hacker2.length} characters.`);
+  }
 else 
-{
-console.log (`Wow, you both have equally long names, ${hacker1.length} characters!`)
-}
+  {
+  console.log (`Wow, you both have equally long names, ${hacker1.length} characters!`)
+  }
 
 // Iteration 3: Loops
 
 //Iteration 3.1
-let driveruppercased = hacker1.toLocaleUpperCase();
+let driveruppercased = hacker1.toLocaleUpperCase(); //'deposit' = name in uppercase.
 let deposit = '';
-for (let i = 0; i <driveruppercased.length; i++)
-{
+for (let i = 0; i <driveruppercased.length; i++) //+ space after each letter.
+  {
   deposit = deposit + driveruppercased.slice(i,i + 1) + ' ';
-}
+  }
 console.log (deposit);
 
 //Iteration 3.2
 let deposit2 = '';
-for (let i = hacker2.length; i > 0; i--)
-{
-  deposit2 = deposit2 + hacker2.slice(i-1,i);
-}
+for (let i = hacker2.length; i > 0; i--) //i = end navigator´s name.
+  {
+  deposit2 = deposit2 + hacker2.slice(i-1,i); //adding letters from back to start.
+  }
 console.log (deposit2);
 
 //itearion 3.3
-let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let navigatoruppercased = hacker2.toLocaleUpperCase();
-let checkword = navigatoruppercased.length - 1;
+let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // 'alphabet' provides lexicographic order. 
+let navigatoruppercased = hacker2.toLocaleUpperCase(); //comparation in uppercase.
+let checkword = navigatoruppercased.length - 1; //limit of letter´s comparation.
 let counter = 0;
-while (counter < navigatoruppercased.length)
+while (counter < navigatoruppercased.length) //cheking from first letter to last one.
   {
-    if (driveruppercased.charAt(counter) !== navigatoruppercased.charAt(counter))
+    if (driveruppercased.charAt(counter) !== navigatoruppercased.charAt(counter)) //names are different.
     {
-      for (let i = 0; i < alphabet.length; i++)
+      for (let i = 0; i < alphabet.length; i++) //checking from A to Z.
       {
-        if (driveruppercased.charAt(counter) === alphabet.charAt(i) )
+        if (driveruppercased.charAt(counter) === alphabet.charAt(i) ) //driver´s first?
         {
         console.log(`The driver's name goes first.`);
-        counter = navigatoruppercased.length;
+        counter = navigatoruppercased.length; // for exit while loop.
         break;
         }
-        if (navigatoruppercased.charAt(counter) === alphabet.charAt(i) )
+        if (navigatoruppercased.charAt(counter) === alphabet.charAt(i) ) //navigator´s first?
         {
         console.log(`Yo, the navigator goes first definitely.`);
-        counter = navigatoruppercased.length;
+        counter = navigatoruppercased.length; // for exit while loop.
         break;
         }
       }
     }
-    if (driveruppercased.charAt(counter) === navigatoruppercased.charAt(counter))
+    if (driveruppercased.charAt(counter) === navigatoruppercased.charAt(counter)) //letters are equal.
     {
-      if (counter === checkword)
+      if (counter === checkword) //limit is reached, names are equal.
       {
         console.log(`What?! You both have the same name?`);
         break;
@@ -83,29 +83,29 @@ console.log(lorem);
 
 //bouns1.2
 let counterwords = 0;
-for (let counter2 = 0; counter2 < lorem.length; counter2++)
-{
-  if (lorem.charAt(counter2) === ' ')
+for (let counter2 = 0; counter2 < lorem.length; counter2++) //checking from 1st letter until last one.
   {
+  if (lorem.charAt(counter2) === ' ') //counting 'blank spaces'
+    {
     counterwords++;
-  } 
-}
-counterwords++;
+    } 
+  }
+counterwords++; //adding last word not counted.
 console.log(counterwords);
 
 //bonus1.3
 let counterets = 0;
 let counter3 = 0;
 let counter4 = 0;
-for (let counter2 = 0; counter2 < lorem.length; counter2++)
+for (let counter2 = 0; counter2 < lorem.length; counter2++) //checking from 1st letter until last one.
 {
-  if (lorem.charAt(counter2) === 'e')
+  if (lorem.charAt(counter2) === 'e') //the letter is 'e'?
   {
     counter3 = counter2 + 1;
-    if (lorem.charAt(counter3) === 't')
+    if (lorem.charAt(counter3) === 't') //next letter is 't'?
     {
      counter4 = counter3 + 1; 
-     if (lorem.charAt(counter4) === ' ')
+     if (lorem.charAt(counter4) === ' ') //next letter is 'blank space''?
      {
      counterets++;  
      } 
@@ -118,7 +118,7 @@ console.log(counterets);
 let phraseToCheck = `Another one`;
 console.log(phraseToCheck);
 let phraseclean = '';
-for (let counter5 = 0; counter5 < phraseToCheck.length; counter5++)
+for (let counter5 = 0; counter5 < phraseToCheck.length; counter5++) //filter blank space ,?!'
 {
  if (phraseToCheck.charAt(counter5) != ' ')
  {
@@ -137,34 +137,37 @@ for (let counter5 = 0; counter5 < phraseToCheck.length; counter5++)
     }
   } 
 }
-let phraseuppercased = phraseclean.toUpperCase();
+let phraseuppercased = phraseclean.toUpperCase(); //all letters uppercase.
 let counterphrase = 0;
-switch (phraseuppercased.length % 2){
-  case 0:
-  counterphrase = (phraseuppercased.length) / 2; 
+//length pair or odd?.
+switch (phraseuppercased.length % 2) 
+  {
+  case 0: // pair
+  counterphrase = (phraseuppercased.length) / 2; //counting just to the middle of the phrase.
   break;
-  case 1:
+  case 1: // odd
   counterphrase = ((phraseuppercased.length + 1) / 2); 
   break;
-}
-let counter7 = phraseuppercased.length - 1;
+  }
+let counter7 = phraseuppercased.length - 1; //counter from the end of the phrase.
 let checkpalindrome = 0;
-for (let counter6 = 0; counter6 < counterphrase; counter6++)
+for (let counter6 = 0; counter6 < counterphrase; counter6++) //checking from start to the middle.
   {
-    if (phraseuppercased.charAt(counter6) !== phraseuppercased.charAt(counter7 - counter6))
+    if (phraseuppercased.charAt(counter6) !== phraseuppercased.charAt(counter7 - counter6)) //letters different?
     {
     checkpalindrome = 1;
     }
   }
-switch (checkpalindrome)
-{
+ //if chekpalindrome = 1 there are letters different. 
+switch (checkpalindrome)  
+  {
   case 0:
   console.log('It´s a Palindrome.')
   break;
   case 1:
   console.log('It´s not a Palindrome.')
   break;
-}
+  }
 
 
 
