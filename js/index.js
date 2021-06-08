@@ -114,6 +114,58 @@ for (let counter2 = 0; counter2 < lorem.length; counter2++)
 }
 console.log(counterets);
 
+//Bonus2
+let phraseToCheck = `Another one`;
+console.log(phraseToCheck);
+let phraseclean = '';
+for (let counter5 = 0; counter5 < phraseToCheck.length; counter5++)
+{
+ if (phraseToCheck.charAt(counter5) != ' ')
+ {
+   if (phraseToCheck.charAt(counter5) != ',')
+   {
+     if (phraseToCheck.charAt(counter5) != '?')
+     {
+       if (phraseToCheck.charAt(counter5) != '!')
+       {
+         if (phraseToCheck.charAt(counter5) != `'`)
+         {
+         phraseclean = phraseclean + phraseToCheck.charAt(counter5);  
+         }
+       }
+     }
+    }
+  } 
+}
+let phraseuppercased = phraseclean.toUpperCase();
+let counterphrase = 0;
+switch (phraseuppercased.length % 2){
+  case 0:
+  counterphrase = (phraseuppercased.length) / 2; 
+  break;
+  case 1:
+  counterphrase = ((phraseuppercased.length + 1) / 2); 
+  break;
+}
+let counter7 = phraseuppercased.length - 1;
+let checkpalindrome = 0;
+for (let counter6 = 0; counter6 < counterphrase; counter6++)
+  {
+    if (phraseuppercased.charAt(counter6) !== phraseuppercased.charAt(counter7 - counter6))
+    {
+    checkpalindrome = 1;
+    }
+  }
+switch (checkpalindrome)
+{
+  case 0:
+  console.log('It´s a Palindrome.')
+  break;
+  case 1:
+  console.log('It´s not a Palindrome.')
+  break;
+}
+
 
 
 
